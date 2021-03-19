@@ -1,0 +1,66 @@
+<main id="main" class="main-page">
+    <section id="faq" class="wow fadeInUp">
+        <div class="container">
+            <div class="section-header">
+                <h2>Agenda cultural </h2>
+                <p>Documentos de turismo que quizá necesites</p>
+            </div>
+
+            <h4>Calendario</h4>
+            <div>
+                <form #f="ngForm" id="search" (change)="buscarFecha(f);">
+                    <input type="date" id="fecha" name="fecha" [ngModel]="fechaAct" [value]="fechaAct">
+                </form>
+            </div>
+
+            <section id="schedule" class="section-with-bg">
+                <div class="container wow fadeInUp">
+                    <div class="tab-content row justify-content-center">
+                        <div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1" *ngIf="agenda.length == 0">
+                            <div class="row schedule-item">
+                                <div class="col-md-12">
+                                    <h4>No se ha registrado eventos en esta fecha</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1" *ngIf="agenda.length > 0">
+                            <div class="row schedule-item">
+                                <div class="col-md-2">
+                                    <h4>Hora</h4>
+                                </div>
+                                <div class="col-md-8">
+                                    <h4>Evento/Información</h4>
+                                </div>
+                                <div class="col-md-2">
+                                    <h4>Lugar</h4>
+                                </div>
+                            </div>
+
+                            <div class="row schedule-item" *ngFor="let ag of agenda">
+                                <div class="col-md-2"><time>{{ ag.fecha.substring(11,16) }}</time></div>
+                                <div class="col-md-8">
+                                    <h4>{{ ag.titulo }}</h4>
+                                    <p>{{ ag.descripcion }}</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <p>{{ ag.lugar }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+</main>

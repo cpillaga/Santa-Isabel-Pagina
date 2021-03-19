@@ -1,0 +1,35 @@
+<main id="main" class="main-page">
+    <section id="schedule" class="section-with-bg">
+        <div class="section-header">
+            <h2>Rutas y senderos</h2>
+        </div>
+
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-content table-responsive table-full-width">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre Ruta</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let ruta of rutas; let i= index;">
+                                        <td style="cursor: pointer;" (click)="graficarRuta(ruta._id);">{{ ruta.descripcion }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8" style="border-color: #000;">
+                    <div id="map" class="map demo-area"></div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+</main>

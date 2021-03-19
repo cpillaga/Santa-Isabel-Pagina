@@ -1,0 +1,70 @@
+<main id="main" class="main-page">
+    <section id="schedule" class="section-with-bg">
+        <div class="container wow fadeInUp">
+            <div class="section-header">
+                <h2>Mapa turístico</h2>
+                <p>Categorías de turismo</p>
+            </div>
+
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" #closebuttonadd (click)="lugaresTipo('Atractivos culturales');" style="cursor: pointer;" role="tab" data-toggle="tab">Atractivos culturales</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" (click)="lugaresTipo('Atractivos naturales');" style="cursor: pointer;" role="tab" data-toggle="tab">Atractivos naturales</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" (click)="lugaresTipo('Alojamiento');" style="cursor: pointer;" role="tab" data-toggle="tab">Alojamiento</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " (click)="lugaresTipo('Alimentación');" style="cursor: pointer;" role="tab" data-toggle="tab">Alimentos y bebidas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" (click)="lugaresTipo('Operador turístico');" style="cursor: pointer;" role="tab" data-toggle="tab">Operadores turísticos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" (click)="lugaresTipo('Transporte');" style="cursor: pointer;" role="tab" data-toggle="tab">Transporte</a>
+                </li>
+            </ul>
+
+            <h3 class="sub-heading">En las diferentes categorías encontrarás información detallada en cada item. </h3>
+
+            <div class="tab-content row justify-content-center">
+
+                <!-- Schdule Day 1 -->
+                <div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1">
+                    <section id="hotels" class="section-with-bg wow fadeInUp">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6" *ngFor="let lug of lugares">
+                                <div class="hotel" style="height: 275px !important;">
+                                    <div class="hotel-img">
+                                        <img src="{{lug.img}}" alt="Hotel 1" class="img-fluid-mapa">
+                                    </div>
+                                    <h3 style="height: 50px !important;"><a routerLink="/detLugar/{{lug._id}}">{{ lug.nombre.substring(0,28) }}</a></h3>
+                                    <p>{{ lug.sector.descripcion }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <!-- End Schdule Day 1 -->
+            </div>
+
+
+            <!-- <div class="tab-content row justify-content-center">
+
+                <div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1">
+                    <section id="hotels" class="section-with-bg wow fadeInUp">-->
+            <!-- <div class="row">
+                <div id="map" class="map demo-area"></div>
+                <div id="popup" class="ol-popup">
+                    <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+                    <div id="popup-content"></div>
+                </div>
+            </div> -->
+            <!-- </section>
+                </div>
+            </div> -->
+        </div>
+    </section>
+</main>

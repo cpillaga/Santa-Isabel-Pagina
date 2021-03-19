@@ -1,0 +1,41 @@
+<main id="main" class="main-page">
+
+    <!--==========================
+      Speaker Details Section
+    ============================-->
+    <section id="speakers-details" class="wow fadeIn">
+        <div class="container">
+            <div class="section-header">
+                <h2>{{lugar.nombre}}</h2>
+                <p>{{lugar.sector["nombre"]}}</p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6" style="text-align: center;">
+                    <img src="{{lugar.img}}" style="width: 450px !important; height: 300px;" class="img-fluid">
+                    <div class="details" style="margin-top: 10px !important;">
+
+                        <h2>Contactos</h2>
+
+                        <div class="social">
+                            <a *ngIf="redes.telefono.length > 0" href="tel:+{{redes.telefono}}"><i class="fa fa-phone"></i></a>
+                            <a *ngIf="redes.facebook.length > 0" href="{{redes.facebook}}" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a *ngIf="redes.instagram.length > 0" href="{{redes.instagram}}" target="_blank"><i class="fa fa-instagram"></i></a>
+                            <a *ngIf="redes.paginaWeb.length > 0" href="{{redes.paginaWeb}}" target="_blank"><i class="fa fa-globe"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="details">
+                        <h2>Descripción</h2>
+                        <p>{{lugar.descripcion}}</p>
+                        <h2>Información</h2>
+                        <p>{{lugar.informacion}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</main>
