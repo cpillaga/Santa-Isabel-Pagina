@@ -22,6 +22,7 @@ import { RutasService } from './services/rutas.service';
 import { AgendaService } from './services/agenda.service';
 import { DescargasComponent } from './pages/descargas/descargas.component';
 import { DescargasService } from './services/descargas.service';
+import { ContactosComponent } from './pages/contactos/contactos.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { DescargasService } from './services/descargas.service';
     DetalleLugarComponent,
     AgendaComponent,
     RutasComponent,
-    DescargasComponent
+    DescargasComponent,
+    ContactosComponent
   ],
   imports: [
     BrowserModule,

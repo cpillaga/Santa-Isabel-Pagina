@@ -7,6 +7,7 @@ import { DetalleLugarComponent } from './pages/detalle-lugar/detalle-lugar.compo
 import { AgendaComponent } from './pages/agenda/agenda.component';
 import { RutasComponent } from './pages/rutas/rutas.component';
 import { DescargasComponent } from './pages/descargas/descargas.component';
+import { ContactosComponent } from './pages/contactos/contactos.component';
 
 const app_routes: Routes = [
     { path: 'inicio', component: InicioComponent },
@@ -16,6 +17,7 @@ const app_routes: Routes = [
     { path: 'rutas', component: RutasComponent },
     { path: 'detLugar/:idLugar', component: DetalleLugarComponent },
     { path: 'descargas', component: DescargasComponent },
+    { path: 'contactos', component: ContactosComponent },
     { path: '**', pathMatch: 'full', redirectTo: 'inicio'},
     { path: '', pathMatch: 'full', redirectTo: 'inicio'}
 ];
