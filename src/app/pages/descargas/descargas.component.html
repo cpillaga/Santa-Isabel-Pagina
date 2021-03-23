@@ -1,0 +1,29 @@
+<main id="main" class="main-page">
+    <section id="schedule" class="section-with-bg">
+        <div class="container wow fadeInUp">
+            <div class="section-header">
+                <h2>Recursos Descargables</h2>
+            </div>
+
+            <div class="tab-content row justify-content-center">
+
+                <!-- Schdule Day 1 -->
+                <div role="tabpanel" class="col-lg-9" id="day-1">
+                    <section id="hotels" class="section-with-bg">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3" *ngFor="let file of archivos">
+                                <div (click)="abrirFile(file.link)" class="hotel" style="height: 205px !important; cursor: pointer; background-color: transparent; text-align: center; border-color: transparent;">
+                                    <div class="">
+                                        <img src="assets/img/pdf64.png" style="height: 100px !important;" alt="Hotel 1" class="img-fluid-mapa">
+                                    </div>
+                                    <a (click)="abrirFile(file.link)" style="height: 50px !important; cursor: pointer;">{{ file.descripcion }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <!-- End Schdule Day 1 -->
+            </div>
+        </div>
+    </section>
+</main>

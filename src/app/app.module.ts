@@ -20,6 +20,8 @@ import { RutasComponent } from './pages/rutas/rutas.component';
 import { FullyearcalendarLibModule } from 'fullyearcalendar-lib/';
 import { RutasService } from './services/rutas.service';
 import { AgendaService } from './services/agenda.service';
+import { DescargasComponent } from './pages/descargas/descargas.component';
+import { DescargasService } from './services/descargas.service';
 
 
 @NgModule({
@@ -32,7 +34,8 @@ import { AgendaService } from './services/agenda.service';
     MapaComponent,
     DetalleLugarComponent,
     AgendaComponent,
-    RutasComponent
+    RutasComponent,
+    DescargasComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +51,8 @@ import { AgendaService } from './services/agenda.service';
   providers: [
     LugarService,
     AgendaService,
-    RutasService
+    RutasService,
+    DescargasService
   ],
   bootstrap: [AppComponent]
 })

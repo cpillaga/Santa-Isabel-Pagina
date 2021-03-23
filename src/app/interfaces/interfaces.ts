@@ -51,3 +51,9 @@ export interface Redes {
     lugar: string,
     _id?: string
 }
+
+export interface Descargables {
+    descripcion: string,
+    link: string,
+    _id?: string
+}

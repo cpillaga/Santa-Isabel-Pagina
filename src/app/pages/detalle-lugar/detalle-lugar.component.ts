@@ -43,10 +43,7 @@ export class DetalleLugarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-   
     this.getLugar();
-    this.initilizeMap();
-    
   }
 
   getLugar(){
@@ -62,99 +59,99 @@ export class DetalleLugarComponent implements OnInit {
     });
   }
 
-  initilizeMap() {
+  // initilizeMap() {
 
-    this.map = new Map({
-      target: 'map',
-      layers: [
-        new Tile({
-          source: new OSM()
-        })
-      ],
-      view: new View({
-        center: this.center,
-        zoom: 12
-      })
-    });
-  }
+  //   this.map = new Map({
+  //     target: 'map',
+  //     layers: [
+  //       new Tile({
+  //         source: new OSM()
+  //       })
+  //     ],
+  //     view: new View({
+  //       center: this.center,
+  //       zoom: 12
+  //     })
+  //   });
+  // }
 
-  crearMarcador(categoria){
-    var container = document.getElementById('popup');
-    var content = document.getElementById('popup-content');
-    var closer = document.getElementById('popup-closer');
+  // crearMarcador(categoria){
+  //   var container = document.getElementById('popup');
+  //   var content = document.getElementById('popup-content');
+  //   var closer = document.getElementById('popup-closer');
 
-    var overlay = new Overlay({
-      element: container,
-      autoPan: true,
-      autoPanAnimation: {
-        duration: 250,
-      },
-    });
+  //   var overlay = new Overlay({
+  //     element: container,
+  //     autoPan: true,
+  //     autoPanAnimation: {
+  //       duration: 250,
+  //     },
+  //   });
 
-    closer.onclick = function () {
-      overlay.setPosition(undefined);
-      closer.blur();
-      return false;
-    };
+  //   closer.onclick = function () {
+  //     overlay.setPosition(undefined);
+  //     closer.blur();
+  //     return false;
+  //   };
 
-    const marcadores = [];
+  //   const marcadores = [];
 
-    if(this.contLay > 0){
-      this.map.removeLayer(this.capa);
-    }
+  //   if(this.contLay > 0){
+  //     this.map.removeLayer(this.capa);
+  //   }
 
-    this._lugarService.getTipoDesc(categoria).subscribe(resp => {
-      this._lugarService.getLugarTipo(resp[0]._id).subscribe(lug => {
+  //   this._lugarService.getTipoDesc(categoria).subscribe(resp => {
+  //     this._lugarService.getLugarTipo(resp[0]._id).subscribe(lug => {
 
-        for (let i = 0; i < lug.length; i++) {
-          let marcador = new Feature({
-            geometry: new Point(
-                fromLonLat([lug[i].lng, lug[i].lat])// En dónde se va a ubicar
-            ),
-          });
+  //       for (let i = 0; i < lug.length; i++) {
+  //         let marcador = new Feature({
+  //           geometry: new Point(
+  //               fromLonLat([lug[i].lng, lug[i].lat])// En dónde se va a ubicar
+  //           ),
+  //         });
 
-          marcador.setStyle(new Style({
-              image: new Icon({
-                color: resp[0].color,
-                crossOrigin: 'anonymous',
-                src: 'assets/img/marcador.png',
-                imgSize: [24, 24]
-              })
-          }));
-          marcadores.push(marcador);
-        }
+  //         marcador.setStyle(new Style({
+  //             image: new Icon({
+  //               color: resp[0].color,
+  //               crossOrigin: 'anonymous',
+  //               src: 'assets/img/marcador.png',
+  //               imgSize: [24, 24]
+  //             })
+  //         }));
+  //         marcadores.push(marcador);
+  //       }
 
-        this.capa = new Vec({
-            source: new Vector({
-                features: marcadores,
-            }),
-        });
+  //       this.capa = new Vec({
+  //           source: new Vector({
+  //               features: marcadores,
+  //           }),
+  //       });
 
-        this.map.addLayer(this.capa);
-        this.map.addOverlay(overlay);
+  //       this.map.addLayer(this.capa);
+  //       this.map.addOverlay(overlay);
 
-        // this.map.on('singleclick', function (evt) {
-        //   console.log(evt.pixel);
-        //   // var coordinate = evt.coordinate;
-        //   // var hdms = toStringHDMS(toLonLat(coordinate));
+  //       // this.map.on('singleclick', function (evt) {
+  //       //   console.log(evt.pixel);
+  //       //   // var coordinate = evt.coordinate;
+  //       //   // var hdms = toStringHDMS(toLonLat(coordinate));
         
-        //   // content.innerHTML = '<p>You clicked here:</p><code>' + hdms + '</code>';
-        //   // overlay.setPosition(coordinate);
-        // });
+  //       //   // content.innerHTML = '<p>You clicked here:</p><code>' + hdms + '</code>';
+  //       //   // overlay.setPosition(coordinate);
+  //       // });
 
-        this.map.on('click', function(evt) {
-          var pixel = this.getEventPixel(evt.originalEvent);
-          var mapFeature = this.map.forEachFeatureAtPixel(pixel, function(feature, layer) {
-              return feature;
-                }, null, function(layer) {
-                         return layer === this.capa;
-                });
-          console.log(mapFeature);
-          });
+  //       this.map.on('click', function(evt) {
+  //         var pixel = this.getEventPixel(evt.originalEvent);
+  //         var mapFeature = this.map.forEachFeatureAtPixel(pixel, function(feature, layer) {
+  //             return feature;
+  //               }, null, function(layer) {
+  //                        return layer === this.capa;
+  //               });
+  //         console.log(mapFeature);
+  //         });
 
-        this.contLay = 1;
-      });
-    });
-  }
+  //       this.contLay = 1;
+  //     });
+  //   });
+  // }
 
 }

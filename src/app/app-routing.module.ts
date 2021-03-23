@@ -6,6 +6,7 @@ import { MapaComponent } from './pages/mapa/mapa.component';
 import { DetalleLugarComponent } from './pages/detalle-lugar/detalle-lugar.component';
 import { AgendaComponent } from './pages/agenda/agenda.component';
 import { RutasComponent } from './pages/rutas/rutas.component';
+import { DescargasComponent } from './pages/descargas/descargas.component';
 
 const app_routes: Routes = [
     { path: 'inicio', component: InicioComponent },
@@ -14,6 +15,7 @@ const app_routes: Routes = [
     { path: 'agenda', component: AgendaComponent },
     { path: 'rutas', component: RutasComponent },
     { path: 'detLugar/:idLugar', component: DetalleLugarComponent },
+    { path: 'descargas', component: DescargasComponent },
     { path: '**', pathMatch: 'full', redirectTo: 'inicio'},
     { path: '', pathMatch: 'full', redirectTo: 'inicio'}
 ];
