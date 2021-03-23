@@ -673,7 +673,8 @@ body.mobile-nav-active #mobile-nav-toggle {
     border-radius: 20px;
     background-size: cover;
     overflow: hidden;
-    top: 600px;
+    bottom: -50px;
+    /* top: 600px; */
     position: absolute;
     color: #f82249;
     padding: 40px 40px 40px 40px;
