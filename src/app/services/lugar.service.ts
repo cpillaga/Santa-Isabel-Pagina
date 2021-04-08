@@ -26,7 +26,7 @@ export class LugarService {
 
   getLugarID(id){
 
-    const url = URL_SERVICE.url + '/lugar/' + id;
+    const url = URL_SERVICE.url + '/lugar/id/' + id;
 
     return this.http.get(url)
         .map((resp: any) =>

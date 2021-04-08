@@ -484,7 +484,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 #intro {
     width: 100%;
     height: 100vh;
-    background: url(../img/Home/slider1.png) top center;
+    background: url(../img/Home/slider1.png), url(../img/Home/slider2.png) top center;
+    background-repeat: repeat, repeat;
     background-size: cover;
     overflow: hidden;
     position: relative;

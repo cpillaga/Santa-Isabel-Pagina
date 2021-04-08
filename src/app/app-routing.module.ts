@@ -20,7 +20,7 @@ const app_routes: Routes = [
     { path: 'contactos', component: ContactosComponent },
     { path: '**', pathMatch: 'full', redirectTo: 'inicio'},
     { path: '', pathMatch: 'full', redirectTo: 'inicio'}
-];
+]; 
 
 @NgModule({
     imports: [
