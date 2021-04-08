@@ -28,6 +28,7 @@ export class LugarService {
 
     const url = URL_SERVICE.url + '/lugar/id/' + id;
 
+    
     return this.http.get(url)
         .map((resp: any) =>
             resp.lugar
